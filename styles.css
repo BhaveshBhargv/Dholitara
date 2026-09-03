@@ -311,7 +311,8 @@ ul{margin:0; padding:0; list-style:none}
 /* ---------- garba circle ---------- */
 .garba{position:relative; display:grid; place-items:center; margin-top:clamp(10px,3vw,30px)}
 .garba__ring{
-  position:relative; width:min(660px,88vw); aspect-ratio:1;
+  --ringw:min(680px,86vw);
+  position:relative; width:var(--ringw); aspect-ratio:1;
   animation:spin 72s linear infinite;
 }
 .garba__core{
@@ -332,6 +333,7 @@ ul{margin:0; padding:0; list-style:none}
   70%{transform:scale(.95,1.06) translateY(1px); opacity:.98}
 }
 .garba__node{
+  --rad:calc(var(--ringw) * .375);
   position:absolute; left:50%; top:50%; width:0; height:0;
   transform:rotate(var(--a)) translateY(calc(-1 * var(--rad))) rotate(calc(-1 * var(--a)));
 }
@@ -342,7 +344,7 @@ ul{margin:0; padding:0; list-style:none}
 }
 .garba__medal{
   width:clamp(56px,7.6vw,78px); height:auto; margin:0 auto 12px;
-  mix-blend-mode:multiply;
+  aspect-ratio:1; object-fit:cover; border-radius:50%;
   transition:transform .45s cubic-bezier(.22,1,.36,1), filter .45s;
 }
 .garba__inner h3{

@@ -201,7 +201,6 @@
       var node = document.createElement('div');
       node.className = 'garba__node';
       node.style.setProperty('--a', (360 / n) * i + 'deg');
-      node.style.setProperty('--rad', '39%');
       node.innerHTML =
         '<div class="garba__inner">' +
         '<img class="garba__medal" src="assets/' + w.img + '.png" alt="" loading="lazy">' +
